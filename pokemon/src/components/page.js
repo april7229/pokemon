@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Pokemon from '../components/pokemon';
-import Search from '../components/search';
+import React, { Component } from 'react'
+import Pokemon from '../components/pokemon'
+import Search from '../components/search'
 
 class Page extends Component
 {
@@ -11,11 +11,13 @@ class Page extends Component
 
     handleSearch( event )
     {
-        this.props.filterPokemons(event.currentTarget.value)
+        this.props.filterPokemons( event.currentTarget.value )
     }
+
     render()
     {
         let { displayedPokemons, isFetched, error } = this.props
+
         let pokemons = displayedPokemons.map( pokemon =>
         {
             return (
@@ -24,19 +26,21 @@ class Page extends Component
                 </li>
             )
         } )
+
         return (
             <div className="page">
-                {error && <div className="page__error">{error}></div>}
+                {error && <div className="page__error">{error}</div>}
                 <div className="page__search">
-                    <Search onChange={this.handleSearch.bind(this)} />
+                    <Search onChange={this.handleSearch.bind( this )} />
                 </div>
                 {isFetched ? (
                     <p>Loading...</p>
                 ) : (
                         <ul className="pokemons">{pokemons}</ul>
-                )}
+                    )}
             </div>
         )
     }
 }
-export default Page;
+
+export default Page

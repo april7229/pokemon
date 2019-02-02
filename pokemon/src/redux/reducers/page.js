@@ -5,14 +5,13 @@ import
     GET_POKEMONS_FAIL,
     SET_POKEMONS,
     FILTER_POKEMONS
-} from '../constants/page';
-
+} from '../constants/page'
 
 const initialState = {
     isFetched: false,
     error: null,
     pokemons: [],
-    displayedPokemons:[]
+    displayedPokemons: []
 }
 
 export default function ( state = initialState, action )
@@ -24,29 +23,33 @@ export default function ( state = initialState, action )
                 ...state,
                 isFetched: true
             }
+
         case GET_POKEMONS_SUCCESS:
             return {
                 ...state,
-                isFetched:false
+                isFetched: false
             }
+
         case GET_POKEMONS_FAIL:
             return {
                 ...state,
                 isFetched: false,
-                error:action.payload
+                error: action.payload
             }
+
         case SET_POKEMONS:
             return {
                 ...state,
-                pokemons:action.payload
+                pokemons: action.payload
             }
+
         case FILTER_POKEMONS:
             return {
                 ...state,
                 displayedPokemons: action.payload
             }
+
         default:
             return state
-        
     }
 }

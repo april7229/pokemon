@@ -1,7 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'react'
 
-class Pokemon extends PureComponent {
-  render() {
+class Pokemon extends PureComponent
+{
+  render()
+  {
     const { pokemon } = this.props
 
     return (
@@ -10,9 +12,9 @@ class Pokemon extends PureComponent {
           type="button"
           className="pokemon__sprite"
           style={{
-            backgroundImage: `url(${`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+            backgroundImage: `url(${ `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
               pokemon.id
-            }.png`})`
+              }.png` })`
           }}
         />
         <p className="pokemon__name">{pokemon.name}</p>
@@ -21,4 +23,4 @@ class Pokemon extends PureComponent {
   }
 }
 
-export default Pokemon;
+export default Pokemon
