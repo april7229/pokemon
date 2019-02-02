@@ -2,7 +2,7 @@ import React from 'react';
 
 const Search = ( { onChange } ) => (
     <input type="text"
-        onChange={onCharge}
+        onChange={onChange}
         placeholder="Enter pokemon name...."
         autoFocus
     />
