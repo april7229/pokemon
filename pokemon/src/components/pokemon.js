@@ -21,4 +21,4 @@ class Pokemon extends PureComponent {
   }
 }
 
-export default Pokemon
+export default Pokemon;
